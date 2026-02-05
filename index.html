@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BLISSWHIP | Phuc Thanh Group</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-image: url("https://cdn.bitrix24.com/b28854747/landing/c61/c61b50dac7b2744b3110825dccd52cbd/sky2_1x.png");
+  background-size: cover;
+  padding-bottom: 60px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= HEADER ================= */
+header {
+  height: 130px;
+  background-image: url("https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png");
+  background-size: cover;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.35s ease-in-out;
+}
+
+header.hide-header {
+  transform: translateY(-100%);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.logo img {
+  height: 132px;
+  width: 230px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+nav ul li a {
+  color: lightgreen;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  color: #ff6f00;
+}
+
+/* ================= HERO ================= */
+#hero {
+  position: relative;
+  height: 85vh;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* SLIDER LIÊN TỤC */
+ .hero-slider {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    url('https://cdn.bitrix24.com/b28854747/landing/944/944c910a3c260ec2ea73a25ea10ad4e9/bw1_1x.png'),
+    url('https://cdn.bitrix24.com/b28854747/landing/bed/bedd98380ac9ab9d6ee0d2307daf4a17/bw2_1x.png'),
+    url('https://cdn.bitrix24.com/b28854747/landing/ec7/ec7ebc7a3243558e0b1b4e52397c842c/bw3_1x.png'),
+    url('https://cdn.bitrix24.com/b28854747/landing/36b/36b2af9272cf6d559ad422c9f207749f/bw4_1x.png');
+
+  background-repeat: no-repeat;
+  background-size: 100vw 100%;
+  background-position:
+    0 0,
+    100vw 0,
+    200vw 0,
+    300vw 0;
+
+  animation: heroSlide 30s linear infinite;
+}
+
+@keyframes heroSlide {
+  from {
+    background-position:
+      0 0,
+      100vw 0,
+      200vw 0,
+      300vw 0;
+  }
+  to {
+    background-position:
+      -300vw 0,
+      -200vw 0,
+      -100vw 0,
+      0 0;
+  }
+}
+
+.hero-content {
+  color: lightgreen;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0,0,0,0.35);
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  color: lightgreen;
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: #ff6f00;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #e65f00;
+}
+
+/* ================= COMMON SECTION ================= */
+.section {
+  background-image: url('https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png');
+  background-size: cover;
+  padding: 60px 0;
+  margin: 0 ;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+/* ================= ABOUT US ================= */
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background-image: url("https://cdn.bitrix24.com/b28854747/landing/bfe/bfe210b08c403f042ab789e9ee5fd85f/sky3_1x.png");
+  background-size: cover;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  color: blue;
+}
+
+.card ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+/* ================= QUALITY COMMITMENT ================= */
+.carousel-container {
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 300%;
+  animation: slide 18s infinite linear;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background-image: url("https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png");
+  background-size: cover;
+  text-align: center;
+  padding: 18px 0;
+  transition: transform 0.35s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+footer p {
+  color: lightgreen;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  nav ul {
+    gap: 14px;
+  }
+
+  .section {
+    margin: 0 20px;
+  }
+}
+
+/* ẨN SCROLLBAR */
+html, body {
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== CERTIFICATION AUTO CAROUSEL ===== */
+
+.cert-carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.cert-slide {
+  display: flex;
+  width: max-content;
+  gap: 28px;
+  animation: certScroll 22s linear infinite;
+}
+
+.cert-carousel:hover .cert-slide {
+  animation-play-state: paused;
+}
+
+/* animation chạy liên tục */
+@keyframes certScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* CARD STYLE */
+.slide-item {
+  background-image: url("https://cdn.bitrix24.com/b28854747/landing/bfe/bfe210b08c403f042ab789e9ee5fd85f/sky3_1x.png");
+  background-size: cover;
+  width: 300px;
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+/* Hover zoom + nổi */
+.slide-item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.18);
+}
+
+/* IMAGE */
+.slide-item img {
+  width: cover;
+  height: 300px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.slide-item:hover img {
+  transform: scale(1.05);
+}
+
+/* TITLE */
+.slide-item h4 {
+  color: green;
+  font-size: 16px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+/* DESC */
+.cert-footer-text {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .slide-item {
+    width: 180px;
+  }
+}
+
+.whatsapp-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: green;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+  
+}
+
+.whatsapp-contact a:hover {
+  transform: scale(1.05);
+  color: #1ebe5d;
+}
+
+.whatsapp-contact i {
+  font-size: 22px;
+}
+
+/* ===== ABOUT IMAGE BANNER ===== */
+/* ===== FULL WIDTH ABOUT BANNER ===== */
+.about-banner-full {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 45px;
+}
+
+.about-banner-full img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.section-group{
+  background-image: url("https://cdn.bitrix24.com/b28854747/landing/bb2/bb2dbb17d881c781cb6080e3e498799c/sky5_1x.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* bỏ background riêng của từng section để tránh chồng */
+.section-group .section{
+  background: transparent;
+  margin: 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-content">
+    <div class="logo">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/8ce/8ce3f828f3a0b0daf0cd7031c2e8b22d/chatgpt_image_jan_13_2026_04_49_31_pm_1x.png">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Products</a></li>
+        <!-- <li><a href="#products">About Us</a></li>
+        <li><a href="#technology">Certificate</a></li> -->
+        <li><a href="#policies">Policies</a></li>
+        <li><a href="#contact">Terms & Conditions</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-slider"></div>
+  <div class="hero-content">
+    <h1>PURE ORIGINS AND SAFE</h1>
+    <p>We bring you the safest and purest products for the culinary experience you desire.</p>
+    <a href="#contact" class="btn btn-primary">Contact Us</a>
+  </div>
+</section>
+
+<div class="section-group">
+
+<section id="products" class="section">
+  <div class="container">
+    <h2 style="color:purple">ABOUT US</h2>
+    
+   <div class="about-banner-full">
+         <img src="https://cdn.bitrix24.com/b28854747/landing/703/7034cec5765fb7930b1fc6ee50e5bbbd/bw_banh_1x.png" alt="Blisswhip banner">
+  </div>
+
+    <div class="product-cards">
+      <div class="card">
+        <h3>BLISSWHIP-VIETNAM'S FIRST PURITY N2O WHIPPED CREAM CHARGER</h3>
+        <p style="font-weight: bold;">BLISSWHIP is the first successfully N2O products with ultra-high-purity nitrous oxide, manufactured by Phuc Thanh Vietnam</p>
+        <ul>
+          <li>Pure origins and Safe</li>
+          <li>99,9995% Pure N2O to made Cream Charger </li>
+          <li>All products are intended strictly for culinary use only. Not for medical, recreational, or industrial inhalation purposes.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>BLISSWHIP QUALITY COMMITMENT</h3>
+        <p style="font-weight: bold;">Our quality control is carried out continuosly at every stage of the production process</p>
+        <ul>
+          <li>We have facilities that meet high standards.</li>
+          <li>We has closely collaborated with leading partners such as: LINDE, Nippon Sanso,....</li>
+          <li>View our Plant's website: <a href="https://phucthanhmnf.bitrix24.site/" target="_blank"><b>phucthanhmnf.bitrix24.site/</b></a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>BLISSWHIP HAS 4 NOZZELS</h3>
+        <p style="font-weight: bold;">We have 4 nozzels in our product to make your culinary even more seductive!</p>
+        <li>1 Plain + 3 Flavors</li>
+        <li>1 Strawberry Nozzel</li>
+        <li>1 Orange Nozzel</li>
+        <li>1 Watermelon Nozzel</li>
+        <p>We hope you will have a great experience with BLISSWHIP.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="technology" class="section">
+  <div class="container">
+    <h2 style="color: purple">OUR QUALITY CERTIFICATION</h2>
+   <div class="carousel-container cert-carousel">
+  <div class="carousel-slide cert-slide">
+
+    <!-- SET 1 -->
+    <div class="slide-item">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/f65/f65d44b1f7cd1f34dfc74cb644abde4e/cc1_1x.jpg">
+      <h4>ISO 9001:2015</h4>
+      <p class="cert-footer-text" style="font-weight: bold;">Quality Management System Certification</p>
+    </div>
+
+    <div class="slide-item">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/df5/df5ae381800e440ad7b71d51519a8430/cc2_1x.jpg">
+      <h4>ISO 14001:2015</h4>
+      <p class="cert-footer-text" style="font-weight: bold;">Environmental Management System Certification</p>
+    </div>
+
+    <div class="slide-item">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/db9/db968b111d9b7b72608cc3a7b4c78149/cc3_1x.jpg">
+      <h4>ISO 45001:2018</h4>
+      <p class="cert-footer-text" style="font-weight: bold;">Occupational Health and Safety Management System Certification</p>
+    </div>
+
+    <div class="slide-item">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/c57/c57f3b394d0d1f8251c7789d29027a6f/iso_22000_1x.png">
+      <h4>ISO 22000:2018</h4>
+      <p class="cert-footer-text" style="font-weight: bold;">Food Safety Management System Certification</p>
+    </div>
+
+    <div class="slide-item">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/227/22768c0e33fff5ed4cfeb6dadd557688/haccp_1x.png">
+      <h4>HACCP</h4>
+      <p class="cert-footer-text" style="font-weight: bold;">Hazard Analysis and Critical Control Points Certification</p>
+    </div>
+
+    <!-- SET 2 DUPLICATE (loop mượt) -->
+
+    <div class="slide-item">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/f65/f65d44b1f7cd1f34dfc74cb644abde4e/cc1_1x.jpg">
+      <h4>ISO 9001:2015</h4>
+      <p class="cert-footer-text" style="font-weight: bold;">Quality Management System Certification</p>
+    </div>
+
+    <div class="slide-item">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/df5/df5ae381800e440ad7b71d51519a8430/cc2_1x.jpg">
+      <h4>ISO 14001:2015</h4>
+      <p class="cert-footer-text" style="font-weight: bold;">Environmental Management System Certification</p>
+    </div>
+
+    <div class="slide-item">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/db9/db968b111d9b7b72608cc3a7b4c78149/cc3_1x.jpg">
+      <h4>ISO 45001:2018</h4>
+      <p class="cert-footer-text" style="font-weight: bold;">Occupational Health and Safety Management System Certification</p>
+    </div>
+
+    <div class="slide-item">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/c57/c57f3b394d0d1f8251c7789d29027a6f/iso_22000_1x.png">
+      <h4>ISO 22000:2018</h4>
+      <p class="cert-footer-text" style="font-weight: bold;">Food Safety Management System Certification</p>
+    </div>
+
+    <div class="slide-item">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/227/22768c0e33fff5ed4cfeb6dadd557688/haccp_1x.png">
+      <h4>HACCP</h4>
+      <p class="cert-footer-text" style="font-weight: bold;">Hazard Analysis and Critical Control Points Certification</p>
+    </div>
+
+  </div>
+  
+</div>
+
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <h2 style="color: purple">CONTACT US</h2>
+    <p style="font-weight: bold;">TS27, Tien Son Industrial Park, Tu Son Ward, Bac Ninh, Vietnam</p>
+    <p style="font-weight: bold;">Email: info@phucthanhgroup.com </p>
+    <p style="font-weight: bold;">Tel: (+84)24 3976 3357</p>
+
+    <!-- WhatsApp Contact -->
+    <p class="whatsapp-contact">
+      <a href="https://wa.me/84963466499" target="_blank">
+        <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+      </a>
+    </p>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>© <span id="year"></span> BLISSWHIP</p>
+</footer>
+
+<script>
+let lastScrollTop = 0;
+const header = document.querySelector("header");
+const footer = document.querySelector("footer");
+
+window.addEventListener("scroll", function () {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop && scrollTop > 150) {
+    // Scroll xuống -> Ẩn header + footer
+    header.classList.add("hide-header");
+    footer.classList.add("hide-footer");
+  } else {
+    // Scroll lên -> Hiện header + footer
+    header.classList.remove("hide-header");
+    footer.classList.remove("hide-footer");
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+</body>
+</html>
